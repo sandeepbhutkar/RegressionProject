@@ -9,10 +9,10 @@ from pageObjects.pageOverview import pageOverview
 from utilities import XLutils
 class Test_Employee:
     def test_employee(self):
-        self.path = "C:/Users/sbhutkar/PycharmProjects/RegressionProject/testData/TestData.xlsx"
+        self.path = "D:/Sandeep/pythonProject/Regression Project/testData/TestData.xlsx"
         self.rows = XLutils.get_row_count(self.path, "Sheet1")
         for r in range(2, self.rows + 1):
-            self.driver = webdriver.Chrome(executable_path="C:/Users/sbhutkar/Downloads/chromedriver.exe")
+            self.driver = webdriver.Chrome(executable_path="D:/Sandeep/Driver/chromedriver.exe")
             self.driver.get("https://www.saucedemo.com/")
             # Login Page
             self.pl = pageLogin(self.driver)
