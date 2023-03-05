@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from webdriver_manager.chrome import ChromeDriverManager
 from pageObjects.pageLogin import pageLogin
 from pageObjects.pageProduct import pageProduct
 from pageObjects.pageCart import pageCart
@@ -12,7 +13,7 @@ class Test_Employee:
         self.path = "D:/Sandeep/pythonProject/Regression Project/testData/TestData.xlsx"
         self.rows = XLutils.get_row_count(self.path, "Sheet1")
         for r in range(2, self.rows + 1):
-            self.driver = webdriver.Chrome(executable_path="D:/Sandeep/Driver/chromedriver.exe")
+            self.driver = webdriver.Chrome(ChromeDriverManager().install())
             self.driver.get("https://www.saucedemo.com/")
             # Login Page
             self.pl = pageLogin(self.driver)
