@@ -10,7 +10,7 @@ from pageObjects.pageOverview import pageOverview
 from utilities import XLutils
 class Test_Employee:
     def test_employee(self):
-        self.path = "C:/Users/sbhutkar/PycharmProjects/RegressionProject/testData/TestData.xlsx"
+        self.path = "../RegressionProject/testData/TestData.xlsx"
         self.rows = XLutils.get_row_count(self.path, "Sheet1")
         for r in range(2, self.rows + 1):
             self.driver = webdriver.Chrome(ChromeDriverManager().install())
